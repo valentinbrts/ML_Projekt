@@ -1,3 +1,7 @@
+# Rohdaten ignorieren
+
+raw_data/
+
 # Bilder ignorieren, Ordnerstrukturen behalten
 
 data/**/*.jpg

@@ -8,7 +8,8 @@ Die `.gitkeep` Dateien markieren nur die Ordnerstruktur damit sie in Git sichtba
 
 ### Datensatz einrichten
 1. Datensatz von Kaggle herunterladen (cubism, realism und pop art): [https://www.kaggle.com/datasets/steubk/wikiart]
-2. Bilder in die entsprechenden Ordner einsortieren:
+2. Rohdaten anlegen und mit Skript begrenzte Menge auswählen (raw_data)
+3. Bilder mit Skript in die entsprechenden Ordner einsortieren:
    - data/train/cubism/
    - data/train/pop_art/
    - data/train/realism/
