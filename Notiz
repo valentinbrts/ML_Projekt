@@ -45,3 +45,35 @@ Die `.gitkeep` Dateien markieren nur die Ordnerstruktur damit sie in Git sichtba
       Lädt den besten Checkpoint und prüft ihn einmalig auf den Test-Daten. Gibt die finale Accuracy aus – das ehrliche Urteil über die Modellqualität.
 
 
+
+
+## Envirnment anpassen
+
+Environment bei der Partnerin einrichten
+Das ist ein klassisches Problem beim ersten Mal mit uv – sie hat das Repository aber noch keine .venv. Die wird nicht mit gepusht, sie muss sie lokal erstellen.
+
+Schritt für Schritt für deine Partnerin
+Schritt 1 – Repository geklont und Projektordner in VS Code öffnen
+Wichtig: Sie muss den Projektordner direkt in VS Code öffnen – nicht einen Unterordner davon.
+Schritt 2 – Im Terminal einmal ausführen:
+bash: 
+   uv sync
+   
+Das liest die pyproject.toml und uv.lock aus eurem Repo und installiert exakt dieselben Bibliotheken in einer neuen .venv bei ihr lokal. Das ist der einzige Befehl den sie braucht.
+Schritt 3 – VS Code neu laden:
+Strg + Shift + P → "Developer: Reload Window"
+Schritt 4 – Richtigen Kernel im Notebook auswählen:
+Notebook öffnen → oben rechts "Select Kernel" 
+→ "Python Environments" → .venv auswählen
+Sie sollte dann sehen:
+Python 3.14 ('.venv')    ✅
+
+Warum das funktioniert
+dein Repo hat:
+    pyproject.toml  →  welche Bibliotheken gebraucht werden
+    uv.lock         →  exakte Versionen
+
+uv sync liest beide Dateien
+→ erstellt .venv mit exakt denselben Bibliotheken wie bei dir
+Das ist genau der Grund warum pyproject.toml und uv.lock im Repo sind – damit jeder mit einem einzigen Befehl dieselbe Umgebung bekommt.
+Sag ihr sie soll nach uv sync Bescheid geben was im Terminal steht.
