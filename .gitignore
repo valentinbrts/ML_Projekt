@@ -11,7 +11,7 @@ data/**/*.webp
 
 # Modell ignorieren
 
-model/*.pth
+model/best_model.pth
 
 # Python Umgebung ignorieren
 
