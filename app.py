@@ -7,16 +7,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-# Klassen aus deinem prepare_data.py
+# Klassen aus dem prepare_data.py
 CLASS_NAMES = [
     "baroque",
     "cubism",
+    "minimalism",
     "pop_art",
     "realism",
     "romanticism"
 ]
 
-MODEL_PATH = "model/best_model.pth"
+MODEL_PATH = "model/best_model_run4_resnet50.pth"
 
 st.set_page_config(
     page_title="Epochen Klassifikator",
@@ -26,8 +27,13 @@ st.set_page_config(
 
 @st.cache_resource
 def load_model():
-    model = models.resnet18(weights=None)
-    model.fc = nn.Linear(model.fc.in_features, len(CLASS_NAMES))
+
+    model = models.resnet50(weights="IMAGENET1K_V1")
+
+    model.fc = torch.nn.Sequential(
+    torch.nn.Dropout(0.4),
+    torch.nn.Linear(2048, len(CLASS_NAMES))
+)
 
     checkpoint = torch.load(MODEL_PATH, map_location="cpu")
 
@@ -74,9 +80,9 @@ with st.sidebar:
 
     st.markdown("---")
     st.subheader("Über das Modell")
-    st.write("**Modell:** ResNet18")
+    st.write("**Modell:** ResNet50")
     st.write("**Bildgröße:** 224 × 224")
-    st.write("**Klassen:** Barock, Kubismus, Pop-Art, Realismus, Romantik")
+    st.write("**Klassen:** Barock, Kubismus, Minimalismus, Pop-Art, Realismus, Romantik")
     st.markdown("---")
     st.subheader("Unser Team")
     st.write("**K-Team:** Anna Julitz, Valentin Bridts, Eric Schmidt")
