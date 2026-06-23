@@ -1,9 +1,5 @@
 # 🎨 Epochen Klassifikator
 
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
-![Status](https://img.shields.io/badge/Status-Abgabebereit-green)
-
 ## 📌 Projektübersicht
 
 Dieses Projekt klassifiziert Gemälde mittels **Transfer Learning mit ResNet50 (PyTorch)** in eine von sechs Kunstepochen. Zusätzlich zur Trainingspipeline gibt es eine interaktive **Streamlit-App**, mit der eigene Bilder hochgeladen und live klassifiziert werden können.
