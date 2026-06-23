@@ -1,12 +1,13 @@
 [project]
 name = "ml-projekt"
 version = "0.1.0"
-description = "Add your description here"
+description = "Epochen Klassifikator – Klassifikation von Kunstepochen mittels Transfer Learning mit ResNet50"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "ipykernel>=7.2.0",
     "matplotlib>=3.10.9",
+    "numpy>=2.4.4",
     "pandas>=3.0.2",
     "pillow>=12.2.0",
     "scikit-learn>=1.9.0",
