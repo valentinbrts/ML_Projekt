@@ -50,6 +50,8 @@ pip install -r requirements.txt
 1. WikiArt-Datensatz von Kaggle herunterladen: https://www.kaggle.com/datasets/steubk/wikiart
 2. Relevante Epochen-Ordner in `raw_data/` ablegen.
 
+---
+
 ## 📌 Projektübersicht
 
 Dieses Projekt klassifiziert Gemälde mittels **Transfer Learning mit ResNet50 (PyTorch)** in eine von sechs Kunstepochen. Zusätzlich zur Trainingspipeline gibt es eine interaktive **Streamlit-App**, mit der eigene Bilder hochgeladen und live klassifiziert werden können.
