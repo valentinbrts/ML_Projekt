@@ -1,5 +1,57 @@
 # 🎨 Epochen Klassifikator
 
+## 🚀 Installation & Ausführung
+
+**Voraussetzung:** Python 3.14 (siehe `.python-version`)
+
+### 1. Repository klonen
+
+```bash
+git clone <repo-url>
+cd ml-projekt
+```
+
+### 2. Abhängigkeiten installieren
+
+Es gibt zwei Wege – je nachdem welches Tool ihr nutzt:
+
+**Option A – uv (empfohlen)**
+
+Falls uv noch nicht installiert ist:
+```bash
+winget install astral-sh.uv   # Windows
+# curl -LsSf https://astral.sh/uv/install.sh | sh  # Mac/Linux
+```
+
+Dann Abhängigkeiten installieren:
+```bash
+uv sync
+```
+
+Das liest `pyproject.toml` und `uv.lock` und erstellt automatisch eine `.venv` mit exakt denselben Paketversionen.
+
+**Option B – pip**
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+# source .venv/bin/activate   # Mac/Linux
+pip install -r requirements.txt
+```
+
+### 3. In VS Code öffnen
+
+* Jupyter-Extension installieren (`ms-toolsai.jupyter`)
+* Projektordner direkt (nicht einen Unterordner) in VS Code öffnen
+* Notebook öffnen → oben rechts „Select Kernel" → „Python Environments" → `.venv` auswählen
+
+### 4. Datensatz einrichten
+
+1. WikiArt-Datensatz von Kaggle herunterladen: https://www.kaggle.com/datasets/steubk/wikiart
+2. Relevante Epochen-Ordner in `raw_data/` ablegen.
+
+---
+
 ## 📌 Projektübersicht
 
 Dieses Projekt klassifiziert Gemälde mittels **Transfer Learning mit ResNet50 (PyTorch)** in eine von sechs Kunstepochen. Zusätzlich zur Trainingspipeline gibt es eine interaktive **Streamlit-App**, mit der eigene Bilder hochgeladen und live klassifiziert werden können.
@@ -141,9 +193,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 | Kennzahl    | Wert    |
 | ----------- | ------- |
-| Accuracy    | 73.74 % |
-| Macro F1    | 0.74    |
-| Weighted F1 | 0.74    |
+| Accuracy    | 69.96 % |
+| Macro F1    | 0.70    |
+| Weighted F1 | 0.70    |
 
 Das beste Modell wird anhand des niedrigsten Validation Loss ausgewählt und automatisch gespeichert:
 
